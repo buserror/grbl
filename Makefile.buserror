@@ -1,0 +1,7 @@
+
+PROGRAMMER = -c arduino -P /dev/ttyACM0 -b 115200
+
+include Makefile
+
+flash_buserror:
+	avrdude -F -V -c arduino -p ATMEGA328P -P /dev/ttyACM0 -b 115200 -U flash:w:grbl.hex:i
